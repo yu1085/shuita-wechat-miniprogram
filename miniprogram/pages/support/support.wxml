@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="panel support-card">
+    <image class="logo" src="/assets/logo.png" mode="aspectFill" />
+    <view class="support-title">水獭智聊客服</view>
+    <view class="support-desc">下载、登录、账号认证、资料审核和其他使用问题，可通过客服入口或公众号留言反馈。</view>
+    <button class="primary-button contact-button" open-type="contact">联系在线客服</button>
+    <button class="secondary-button" bindtap="copyServiceAccount">复制公众号名称</button>
+  </view>
+
+  <view class="panel info-card">
+    <view class="section-title">反馈时建议提供</view>
+    <view class="info-row" wx:for="{{feedbackItems}}" wx:key="*this">
+      <text class="dot"></text>
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>

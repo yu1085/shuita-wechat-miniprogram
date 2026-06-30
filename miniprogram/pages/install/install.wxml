@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="panel guide">
+    <view class="section-title">Android 安装步骤</view>
+    <view class="step" wx:for="{{steps}}" wx:key="*this">
+      <view class="step-index">{{index + 1}}</view>
+      <view class="step-text">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="panel warning">
+    <view class="warning-title">微信或 QQ 内打开</view>
+    <view class="warning-text">如果在微信或 QQ 内无法直接下载，请先复制链接，再使用系统浏览器打开。</view>
+  </view>
+
+  <view class="actions">
+    <button class="primary-button" bindtap="copyOfficialUrl">复制官方下载页</button>
+    <button class="secondary-button" bindtap="copyApkUrl">复制 APK 链接</button>
+  </view>
+</view>
