@@ -8,11 +8,11 @@
   </view>
 
   <view class="panel warning">
-    <view class="warning-title">微信或 QQ 内打开</view>
-    <view class="warning-text">如果页面在微信或 QQ 内展示异常，请先复制链接，再使用系统浏览器打开。</view>
+    <view class="warning-title">反馈说明</view>
+    <view class="warning-text">反馈时建议提供注册手机号或用户 ID、问题发生时间、相关页面截图和简要问题描述。</view>
   </view>
 
   <view class="actions">
-    <button class="primary-button" bindtap="copyOfficialUrl">复制官方页面链接</button>
+    <button class="primary-button" bindtap="goSupport">联系客服</button>
   </view>
 </view>

@@ -63,8 +63,7 @@
   margin-top: 24rpx;
 }
 
-.quick,
-.url-card {
+.quick {
   margin-top: 24rpx;
   padding: 30rpx;
 }
@@ -100,8 +99,4 @@
   color: #98a2b3;
   font-size: 52rpx;
   line-height: 1;
-}
-
-.url-card {
-  line-height: 1.6;
 }

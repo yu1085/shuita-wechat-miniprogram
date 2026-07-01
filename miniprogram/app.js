@@ -1,7 +1,6 @@
 App({
   globalData: {
     appName: '水獭智聊',
-    officialUrl: 'https://chenhuiint.com/phone.html?inlet=mini&from=wechat',
     serviceAccount: '水獭智聊'
   },
 
