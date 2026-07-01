@@ -4,16 +4,11 @@ Page({
   data: {
     appName: app.globalData.appName,
     officialUrl: app.globalData.officialUrl,
-    apkUrl: app.globalData.apkUrl,
     serviceAccount: app.globalData.serviceAccount
   },
 
   copyOfficialUrl() {
-    app.copyText(this.data.officialUrl, '下载页已复制');
-  },
-
-  copyApkUrl() {
-    app.copyText(this.data.apkUrl, 'APK 链接已复制');
+    app.copyText(this.data.officialUrl, '官方页面已复制');
   },
 
   goInstall() {

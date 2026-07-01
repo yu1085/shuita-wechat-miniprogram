@@ -3,21 +3,16 @@ const app = getApp();
 Page({
   data: {
     officialUrl: app.globalData.officialUrl,
-    apkUrl: app.globalData.apkUrl,
     steps: [
-      '复制官方下载页链接。',
-      '使用手机系统浏览器打开链接。',
-      '点击下载 Android APK。',
-      '根据系统提示允许安装来自浏览器的应用。',
-      '安装完成后打开水獭智聊，按页面提示登录和认证。'
+      '复制官方页面链接。',
+      '使用手机系统浏览器打开官方页面。',
+      '查看页面中的服务说明。',
+      '按页面提示完成后续操作。',
+      '如遇登录或认证问题，请通过客服入口反馈。'
     ]
   },
 
   copyOfficialUrl() {
-    app.copyText(this.data.officialUrl, '下载页已复制');
-  },
-
-  copyApkUrl() {
-    app.copyText(this.data.apkUrl, 'APK 链接已复制');
+    app.copyText(this.data.officialUrl, '官方页面已复制');
   }
 });

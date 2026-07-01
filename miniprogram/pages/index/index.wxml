@@ -4,18 +4,17 @@
     <view class="hero-copy">
       <view class="eyebrow">官方入口</view>
       <view class="title">水獭智聊</view>
-      <view class="subtitle">获取 Android 安装包、安装教程和客服反馈入口。</view>
+      <view class="subtitle">查看官方服务入口、使用指引和客服反馈入口。</view>
     </view>
   </view>
 
   <view class="notice panel">
-    <view class="notice-title">微信内下载提示</view>
-    <view class="notice-text">微信内可能无法直接安装 APK。请复制官方下载页链接，在系统浏览器中打开后下载。</view>
+    <view class="notice-title">微信内访问提示</view>
+    <view class="notice-text">如需查看完整服务说明，请复制官方页面链接，在系统浏览器中打开。</view>
   </view>
 
   <view class="actions">
-    <button class="primary-button" bindtap="copyOfficialUrl">复制官方下载页</button>
-    <button class="secondary-button" bindtap="copyApkUrl">复制 APK 链接</button>
+    <button class="primary-button" bindtap="copyOfficialUrl">复制官方页面链接</button>
   </view>
 
   <view class="quick panel">
@@ -23,15 +22,15 @@
     <view class="service-list">
       <view class="service-item" bindtap="goInstall">
         <view>
-          <view class="service-title">安装教程</view>
-          <view class="service-desc">查看 Android 安装和浏览器打开说明</view>
+          <view class="service-title">使用指引</view>
+          <view class="service-desc">查看系统浏览器打开官方页面的说明</view>
         </view>
         <text class="arrow">›</text>
       </view>
       <view class="service-item" bindtap="goSupport">
         <view>
           <view class="service-title">联系客服</view>
-          <view class="service-desc">登录、认证、账号和下载问题反馈</view>
+          <view class="service-desc">登录、认证、账号和使用问题反馈</view>
         </view>
         <text class="arrow">›</text>
       </view>
@@ -39,7 +38,7 @@
   </view>
 
   <view class="url-card panel">
-    <view class="section-title">官方下载地址</view>
+    <view class="section-title">官方服务地址</view>
     <text class="link-text">{{officialUrl}}</text>
   </view>
 </view>
