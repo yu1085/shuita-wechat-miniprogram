@@ -1,6 +1,6 @@
 App({
   globalData: {
-    appName: '水獭智聊',
+    appName: '水獭智聊服务助手',
     serviceAccount: '水獭智聊'
   },
 

@@ -1,60 +1,134 @@
-.guide,
-.warning {
-  padding: 30rpx;
+.search-box {
+  display: flex;
+  align-items: center;
+  min-height: 92rpx;
+  padding: 0 24rpx;
 }
 
-.step {
+.search-icon {
+  margin-right: 14rpx;
+  color: #667085;
+  font-size: 38rpx;
+}
+
+.search-input {
+  height: 92rpx;
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.clear-button {
+  padding: 20rpx 0 20rpx 20rpx;
+  color: #9333ea;
+  font-size: 25rpx;
+}
+
+.category-scroll {
+  width: 100%;
+  margin-top: 22rpx;
+  white-space: nowrap;
+}
+
+.category-list {
   display: flex;
+  gap: 14rpx;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92rpx;
+  height: 64rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #dfe4ea;
+  border-radius: 999rpx;
+  color: #475467;
+  background: #ffffff;
+  font-size: 26rpx;
+}
+
+.category-chip.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  border-color: #a855f7;
+}
+
+.result-summary {
+  margin: 24rpx 4rpx 16rpx;
+  color: #667085;
+  font-size: 25rpx;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16rpx;
+}
+
+.faq-item {
+  padding: 26rpx;
+}
+
+.faq-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 20rpx;
-  padding: 24rpx 0;
+}
+
+.faq-copy {
+  min-width: 0;
+}
+
+.faq-category {
+  color: #9333ea;
+  font-size: 23rpx;
+  font-weight: 700;
+}
+
+.faq-question {
+  margin-top: 8rpx;
+  color: #1d2939;
+  font-size: 29rpx;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.faq-toggle {
+  width: 50rpx;
+  flex: none;
+  color: #a855f7;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.faq-answer {
+  margin-top: 22rpx;
+  padding-top: 22rpx;
+  color: #475467;
+  font-size: 27rpx;
+  line-height: 1.75;
   border-top: 1rpx solid #edf0f5;
 }
 
-.step:first-of-type {
-  border-top: none;
+.empty {
+  padding: 56rpx 30rpx;
+  text-align: center;
 }
 
-.step-index {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48rpx;
-  height: 48rpx;
-  flex: none;
-  border-radius: 50%;
-  color: #ffffff;
-  background: #19b36b;
-  font-size: 24rpx;
+.empty-title {
+  font-size: 30rpx;
   font-weight: 700;
 }
 
-.step-text {
-  color: #344054;
-  font-size: 29rpx;
-  line-height: 1.6;
-}
-
-.warning {
-  margin-top: 24rpx;
-  background: #f0f6ff;
-  border-color: #c7dcff;
-}
-
-.warning-title {
-  color: #2456a6;
-  font-size: 31rpx;
-  font-weight: 700;
-}
-
-.warning-text {
+.empty-desc {
   margin-top: 12rpx;
-  color: #344054;
-  font-size: 28rpx;
-  line-height: 1.6;
+  color: #667085;
+  font-size: 26rpx;
 }
 
-.actions {
-  display: grid;
-  gap: 18rpx;
+.diagnose-button {
+  width: 100%;
   margin-top: 24rpx;
 }

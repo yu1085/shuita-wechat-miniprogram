@@ -2,13 +2,15 @@
   "pages": [
     "pages/index/index",
     "pages/install/install",
+    "pages/diagnose/diagnose",
     "pages/support/support"
   ],
+  "lazyCodeLoading": "requiredComponents",
   "window": {
-    "navigationBarTitleText": "水獭智聊",
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "水獭智聊服务助手",
+    "navigationBarBackgroundColor": "#FAF5FF",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#f5f7fb",
+    "backgroundColor": "#FAF5FF",
     "backgroundTextStyle": "dark"
   },
   "style": "v2",

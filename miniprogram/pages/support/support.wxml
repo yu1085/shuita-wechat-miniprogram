@@ -1,17 +1,68 @@
 <view class="page">
-  <view class="panel support-card">
-    <image class="logo" src="/assets/logo.png" mode="aspectFill" />
-    <view class="support-title">水獭智聊客服</view>
-    <view class="support-desc">登录、账号认证、资料审核和其他使用问题，可通过客服入口或公众号留言反馈。</view>
-    <button class="primary-button contact-button" open-type="contact">联系在线客服</button>
-    <button class="secondary-button" bindtap="copyServiceAccount">复制公众号名称</button>
+  <view class="page-heading">
+    <view class="page-title">反馈信息整理</view>
+    <view class="page-subtitle">在本机生成清晰的问题摘要，再由你主动复制并发送给客服。</view>
   </view>
 
-  <view class="panel info-card">
-    <view class="section-title">反馈时建议提供</view>
-    <view class="info-row" wx:for="{{feedbackItems}}" wx:key="*this">
-      <text class="dot"></text>
-      <text>{{item}}</text>
+  <view class="privacy-note panel">
+    <view class="privacy-title">隐私说明</view>
+    <view class="privacy-text">填写内容不会自动上传。请勿填写登录密码、短信验证码或完整证件号码。</view>
+  </view>
+
+  <view class="form-card panel">
+    <view class="field">
+      <view class="field-label">问题类型</view>
+      <picker range="{{feedbackTypes}}" value="{{typeIndex}}" bindchange="changeType">
+        <view class="picker-value">{{feedbackTypes[typeIndex]}} <text>›</text></view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <view class="field-label">发生时间 <text>选填</text></view>
+      <input
+        class="field-input"
+        value="{{occurrenceTime}}"
+        placeholder="例如：今天上午10点左右"
+        bindinput="inputTime"
+      />
+    </view>
+
+    <view class="field">
+      <view class="field-label">问题描述</view>
+      <textarea
+        class="field-textarea"
+        value="{{detail}}"
+        maxlength="300"
+        placeholder="请描述操作步骤、页面提示和期望结果"
+        bindinput="inputDetail"
+      />
+      <view class="word-count">{{detail.length}} / 300</view>
+    </view>
+
+    <view class="diagnosis-row" wx:if="{{diagnosisText}}">
+      <text>最近排查：{{diagnosisText}}</text>
+      <text class="redo" bindtap="goDiagnose">重新排查</text>
+    </view>
+
+    <button class="primary-button generate-button" bindtap="generateSummary">生成反馈摘要</button>
+  </view>
+
+  <view wx:if="{{summary}}" class="summary-card panel">
+    <view class="tag">已生成</view>
+    <text class="summary-text">{{summary}}</text>
+    <view class="summary-actions">
+      <button class="ghost-button" bindtap="copySummary">复制摘要</button>
+      <button class="primary-button" open-type="contact">联系在线客服</button>
     </view>
   </view>
+
+  <view class="direct-card panel">
+    <view>
+      <view class="direct-title">需要直接咨询？</view>
+      <view class="direct-desc">也可以直接进入微信客服会话。</view>
+    </view>
+    <button class="contact-link" open-type="contact">联系客服</button>
+  </view>
+
+  <button wx:if="{{summary}}" class="clear-form" bindtap="clearForm">清空并重新填写</button>
 </view>

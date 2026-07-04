@@ -1,0 +1,101 @@
+.issue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.issue-card {
+  position: relative;
+  min-height: 180rpx;
+  padding: 26rpx;
+  box-sizing: border-box;
+}
+
+.issue-card.selected {
+  background: #faf5ff;
+  border-color: #a855f7;
+  box-shadow: 0 8rpx 22rpx rgba(168, 85, 247, 0.1);
+}
+
+.issue-check {
+  position: absolute;
+  top: 18rpx;
+  right: 20rpx;
+  color: #a855f7;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.issue-name {
+  padding-right: 34rpx;
+  font-size: 30rpx;
+  font-weight: 750;
+}
+
+.issue-desc {
+  margin-top: 12rpx;
+  color: #667085;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.check-section {
+  margin-top: 24rpx;
+  padding: 30rpx;
+}
+
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14rpx;
+  padding: 24rpx 0;
+  color: #344054;
+  font-size: 28rpx;
+  line-height: 1.5;
+  border-top: 1rpx solid #edf0f5;
+}
+
+.check-row checkbox {
+  flex: none;
+  transform: scale(0.88);
+}
+
+.result-button {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.result-card {
+  margin-top: 24rpx;
+  padding: 30rpx;
+}
+
+.result-title {
+  margin-top: 20rpx;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.result-text {
+  display: block;
+  margin-top: 16rpx;
+  color: #475467;
+  font-size: 27rpx;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.result-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+  margin-top: 26rpx;
+}
+
+.reset-button {
+  width: 100%;
+  margin-top: 24rpx;
+  color: #667085;
+  font-size: 27rpx;
+  background: transparent;
+}

@@ -1,18 +1,58 @@
 <view class="page">
-  <view class="panel guide">
-    <view class="section-title">使用指引</view>
-    <view class="step" wx:for="{{steps}}" wx:key="*this">
-      <view class="step-index">{{index + 1}}</view>
-      <view class="step-text">{{item}}</view>
+  <view class="page-heading">
+    <view class="page-title">帮助中心</view>
+    <view class="page-subtitle">搜索水獭智聊账号登录、认证、资料审核和客服反馈说明。</view>
+  </view>
+
+  <view class="search-box panel">
+    <text class="search-icon">⌕</text>
+    <input
+      class="search-input"
+      value="{{searchValue}}"
+      placeholder="输入问题关键词"
+      confirm-type="search"
+      bindinput="handleSearch"
+    />
+    <text wx:if="{{searchValue}}" class="clear-button" bindtap="clearSearch">清除</text>
+  </view>
+
+  <scroll-view class="category-scroll" scroll-x enable-flex>
+    <view class="category-list">
+      <view
+        wx:for="{{categories}}"
+        wx:key="*this"
+        class="category-chip {{activeCategory === item ? 'active' : ''}}"
+        data-category="{{item}}"
+        bindtap="selectCategory"
+      >{{item}}</view>
+    </view>
+  </scroll-view>
+
+  <view class="result-summary">找到 {{resultCount}} 条相关说明</view>
+
+  <view class="faq-list" wx:if="{{resultCount}}">
+    <view
+      class="faq-item panel"
+      wx:for="{{filteredFaqs}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="toggleFaq"
+    >
+      <view class="faq-head">
+        <view class="faq-copy">
+          <text class="faq-category">{{item.category}}</text>
+          <view class="faq-question">{{item.question}}</view>
+        </view>
+        <text class="faq-toggle">{{expandedId === item.id ? '−' : '+'}}</text>
+      </view>
+      <view wx:if="{{expandedId === item.id}}" class="faq-answer">{{item.answer}}</view>
     </view>
   </view>
 
-  <view class="panel warning">
-    <view class="warning-title">反馈说明</view>
-    <view class="warning-text">反馈时建议提供注册手机号或用户 ID、问题发生时间、相关页面截图和简要问题描述。</view>
+  <view class="empty panel" wx:else>
+    <view class="empty-title">暂未找到相关说明</view>
+    <view class="empty-desc">可更换关键词，或使用账号问题自助排查。</view>
   </view>
 
-  <view class="actions">
-    <button class="primary-button" bindtap="goSupport">联系客服</button>
-  </view>
+  <button class="primary-button diagnose-button" bindtap="goDiagnose">进入自助排查</button>
 </view>

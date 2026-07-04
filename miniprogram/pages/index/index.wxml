@@ -2,37 +2,45 @@
   <view class="hero panel">
     <image class="logo" src="/assets/logo.png" mode="aspectFill" />
     <view class="hero-copy">
-      <view class="eyebrow">官方入口</view>
+      <view class="eyebrow">官方服务助手</view>
       <view class="title">水獭智聊</view>
-      <view class="subtitle">查看使用说明和客服反馈入口。</view>
+      <view class="subtitle">查询帮助、排查问题并整理反馈信息。</view>
     </view>
   </view>
 
   <view class="notice panel">
-    <view class="notice-title">服务说明</view>
-    <view class="notice-text">本小程序用于展示水獭智聊使用说明与客服反馈方式，小程序内不提供聊天、交友、支付或交易服务。</view>
+    <view class="notice-title">无需登录即可使用</view>
+    <view class="notice-text">所有排查和反馈内容均在本机处理，不会由小程序自动上传。</view>
   </view>
 
-  <view class="actions">
-    <button class="primary-button" bindtap="goInstall">查看使用指引</button>
-    <button class="secondary-button" bindtap="goSupport">联系客服</button>
+  <view class="service-grid">
+    <view
+      class="service-card panel"
+      wx:for="{{services}}"
+      wx:key="title"
+      data-url="{{item.url}}"
+      bindtap="openService"
+    >
+      <view class="service-icon">{{item.icon}}</view>
+      <view class="service-title">{{item.title}}</view>
+      <view class="service-desc">{{item.desc}}</view>
+      <view class="service-link">立即使用 <text>›</text></view>
+    </view>
   </view>
+
+  <button class="primary-button diagnose-button" bindtap="startDiagnose">开始账号问题自助排查</button>
 
   <view class="quick panel">
-    <view class="section-title">常用服务</view>
-    <view class="service-list">
-      <view class="service-item" bindtap="goInstall">
-        <view>
-          <view class="service-title">使用指引</view>
-          <view class="service-desc">查看账号登录、认证和反馈说明</view>
-        </view>
-        <text class="arrow">›</text>
-      </view>
-      <view class="service-item" bindtap="goSupport">
-        <view>
-          <view class="service-title">联系客服</view>
-          <view class="service-desc">登录、认证、账号和使用问题反馈</view>
-        </view>
+    <view class="section-title">常见问题</view>
+    <view class="question-list">
+      <view
+        class="question-item"
+        wx:for="{{commonQuestions}}"
+        wx:key="title"
+        data-query="{{item.query}}"
+        bindtap="searchQuestion"
+      >
+        <text>{{item.title}}</text>
         <text class="arrow">›</text>
       </view>
     </view>

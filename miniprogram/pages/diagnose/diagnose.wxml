@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="page-heading">
+    <view class="page-title">账号问题自助排查</view>
+    <view class="page-subtitle">选择问题类型，完成基础检查后获取下一步处理建议。</view>
+  </view>
+
+  <view class="section-title">1. 选择问题类型</view>
+  <view class="issue-grid">
+    <view
+      wx:for="{{issueTypes}}"
+      wx:key="id"
+      class="issue-card panel {{selectedId === item.id ? 'selected' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="selectIssue"
+    >
+      <view class="issue-check">{{selectedId === item.id ? '✓' : ''}}</view>
+      <view class="issue-name">{{item.name}}</view>
+      <view class="issue-desc">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{selectedId}}" class="check-section panel">
+    <view class="section-title">2. 勾选已完成的检查</view>
+    <checkbox-group bindchange="updateChecklist">
+      <label class="check-row" wx:for="{{currentSteps}}" wx:key="id">
+        <checkbox value="{{item.id}}" checked="{{item.checked}}" color="#19b36b" />
+        <text>{{item.label}}</text>
+      </label>
+    </checkbox-group>
+    <button class="primary-button result-button" bindtap="generateResult">生成处理建议</button>
+  </view>
+
+  <view wx:if="{{result}}" class="result-card panel">
+    <view class="tag">排查结果</view>
+    <view class="result-title">{{resultTitle}}</view>
+    <text class="result-text">{{result}}</text>
+    <view class="result-actions">
+      <button class="ghost-button" bindtap="copyResult">复制结果</button>
+      <button class="primary-button" bindtap="goSupport">整理反馈</button>
+    </view>
+  </view>
+
+  <button wx:if="{{selectedId}}" class="reset-button" bindtap="reset">重新选择问题</button>
+</view>
